@@ -1,3 +1,44 @@
 spring:
   application:
     name: API-User
+
+#  datasource:
+#    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/api_user_db}
+#    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+#    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+#    driver-class-name: org.postgresql.Driver
+#    hikari:
+#      maximum-pool-size: 10
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: validate
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
+#    show-sql: false
+#
+#  flyway:
+#    enabled: true
+#    locations: classpath:db/migration
+#
+#management:
+#  metrics:
+#    enable:
+#      all: true
+#
+
+  datasource:
+    url: jdbc:h2:mem:API-User
+    driver-class-name: org.h2.Driver
+    username: admin
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+jpa:
+  hibernate:
+    ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
