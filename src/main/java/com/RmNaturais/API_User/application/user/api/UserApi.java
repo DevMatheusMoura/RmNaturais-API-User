@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -24,7 +25,7 @@ public interface UserApi {
 
     @PutMapping ("/{id_User}/update-user")
     @ResponseStatus (HttpStatus.OK)
-    UserResponse updateUser(@RequestBody @Valid  userRequest userRequest, @PathVariable UUID id);
+    void updateUser(@RequestBody @Valid  UserRequest userRequest, @PathVariable UUID id);
 
      @DeleteMapping("/{id_User}/delete-user")
      @ResponseStatus (HttpStatus.NO_CONTENT)
